@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">PopularMovieStage1</string>
+    <string name="highest_rated_string">Highest Rated</string>
+    <string name="most_pop_string">Most Popular</string>
+    <string name="about_hint">About</string>
+    <string name="sort">Sort</string>
+    <string name="rating_label">Rating: </string>
+</resources>
