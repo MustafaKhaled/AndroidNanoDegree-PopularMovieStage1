@@ -13,6 +13,7 @@ import popularmoviestage1.mustafa.example.com.popularmoviestage1.interfaces.Item
 import popularmoviestage1.mustafa.example.com.popularmoviestage1.model.Movie;
 import popularmoviestage1.mustafa.example.com.popularmoviestage1.R;
 import popularmoviestage1.mustafa.example.com.popularmoviestage1.databinding.SingleGridItemBinding;
+import popularmoviestage1.mustafa.example.com.popularmoviestage1.vh.MyViewHolder;
 
 /*
  * Created by Mustafa Khaled on 12/19/2018.

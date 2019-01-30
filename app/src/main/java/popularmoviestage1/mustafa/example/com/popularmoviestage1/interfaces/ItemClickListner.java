@@ -5,5 +5,5 @@ package popularmoviestage1.mustafa.example.com.popularmoviestage1.interfaces;
  *
  */ public interface ItemClickListner {
 
-     public void itemClicked(int position);
+     void itemClicked(int position);
 }

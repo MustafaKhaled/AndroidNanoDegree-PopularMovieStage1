@@ -105,6 +105,9 @@ import static popularmoviestage1.mustafa.example.com.popularmoviestage1.helper.C
             if(item.getItemId() == R.id.sort_menu){
                 showDialog();
             }
+            else if(item.getItemId() == R.id.favorite_menu){
+                startActivity(new Intent(MainActivity.this, FavoriteActivity.class));
+            }
             return true;
         }
 
@@ -237,11 +240,12 @@ import static popularmoviestage1.mustafa.example.com.popularmoviestage1.helper.C
                 Log.d(TAG, "onPostExecute: Results Array: "+ results.toString());
                 for (int i=0;i<results.length();i++){
                     String title = results.getJSONObject(i).get("original_title").toString();
-                    String poster_url = POSTER_BASE_URL.concat(results.getJSONObject(i).get("poster_path").toString());
+                    String poster_url = POSTER_BASE_URL.concat(results.getJSONObject(i) .get("poster_path").toString());
                     String overView = results.getJSONObject(i).get("overview").toString();
                     String user_rating = results.getJSONObject(i).get("vote_average").toString();
                     String relase_date = results.getJSONObject(i).get("release_date").toString();
-                    movieArrayList.add(new Movie(title,poster_url,overView,user_rating,relase_date));
+                    String id = results.getJSONObject(i).get("id").toString();
+                    movieArrayList.add(new Movie(title,poster_url,overView,user_rating,relase_date,id));
 
                 }
 

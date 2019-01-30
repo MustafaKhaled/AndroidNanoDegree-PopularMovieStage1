@@ -8,25 +8,34 @@
             name="details"
             type="popularmoviestage1.mustafa.example.com.popularmoviestage1.model.Movie"/>
     </data>
-<ScrollView
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-
 
         <ImageView
             android:id="@+id/poster_image"
             android:layout_width="match_parent"
             android:layout_height="200dp"
-            tools:imageUrl="@{details.imgUrl}"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            tools:imageUrl="@{details.imgUrl}" />
+
+        <ImageView
+            android:id="@+id/favorite"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="32dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:src="@drawable/ic_favorite_border_black_24dp"
+            />
+
 
         <TextView
             android:id="@+id/poster_title"
@@ -37,8 +46,8 @@
             android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
             android:gravity="center_vertical"
-            android:textSize="27sp"
             android:text="@{details.title}"
+            android:textSize="27sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
@@ -48,22 +57,22 @@
             android:id="@+id/parent_linear"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/poster_title">
 
             <TextView
                 android:id="@+id/date_created"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="2"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginBottom="8dp"
-                android:text="@{details.release_date}"
+                android:layout_weight="2"
                 android:gravity="center_vertical"
                 android:paddingStart="5dp"
+                android:text="@{details.release_date}"
                 app:layout_constraintBottom_toTopOf="@+id/ovewview_hint"
                 app:layout_constraintEnd_toStartOf="@+id/rating_label"
                 app:layout_constraintStart_toStartOf="parent"
@@ -90,11 +99,11 @@
                 android:id="@+id/rating_value"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginBottom="8dp"
+                android:layout_weight="1"
                 android:text="@{details.user_rating}"
                 app:layout_constraintBottom_toTopOf="@+id/ovewview_hint"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -130,6 +139,20 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/ovewview_hint" />
+
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/trailers_list"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/overview_text" />
     </android.support.constraint.ConstraintLayout>
-</ScrollView>
+
 </layout>

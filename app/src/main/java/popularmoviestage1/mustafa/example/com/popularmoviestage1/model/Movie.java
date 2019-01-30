@@ -17,16 +17,18 @@ import popularmoviestage1.mustafa.example.com.popularmoviestage1.BR;
      String user_rating;
      String release_date;
      boolean isLoading;
+     String id;
 
      public Movie() {
      }
 
-     public Movie(String title, String imgUrl, String plot_synopsis, String user_rating, String release_date) {
+     public Movie(String title, String imgUrl, String plot_synopsis, String user_rating, String release_date, String id) {
           this.title = title;
           this.imgUrl = imgUrl;
           this.plot_synopsis = plot_synopsis;
           this.user_rating=user_rating;
           this.release_date = release_date;
+          this.id=id;
      }
 
      protected Movie(Parcel in) {
@@ -35,6 +37,7 @@ import popularmoviestage1.mustafa.example.com.popularmoviestage1.BR;
           plot_synopsis = in.readString();
           user_rating = in.readString();
           release_date = in.readString();
+          id=in.readString();
      }
 
      public static final Creator<Movie> CREATOR = new Creator<Movie>() {
@@ -79,6 +82,14 @@ import popularmoviestage1.mustafa.example.com.popularmoviestage1.BR;
           this.release_date = release_date;
      }
 
+     public String getId() {
+          return id;
+     }
+
+     public void setId(String id) {
+          this.id = id;
+     }
+
      public String getTitle() {
           return title;
      }
@@ -111,5 +122,6 @@ import popularmoviestage1.mustafa.example.com.popularmoviestage1.BR;
           parcel.writeString(plot_synopsis);
           parcel.writeString(user_rating);
           parcel.writeString(release_date);
+          parcel.writeString(id);
      }
 }

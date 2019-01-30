@@ -1,4 +1,4 @@
-package popularmoviestage1.mustafa.example.com.popularmoviestage1.adapter;
+package popularmoviestage1.mustafa.example.com.popularmoviestage1.vh;
 
 import android.databinding.DataBindingUtil;
 import android.support.v7.widget.RecyclerView;
